@@ -23,12 +23,12 @@ def glyco_predict(inputs):
 def main():
     st.header('GlycoSense - Diabeties Predictor')
 
-    Pregnancies = st.text_input('Number of Pregnancies')
-    Glucose	    = st.text_input('Glucose level')
+    Pregnancies    = st.text_input('Number of Pregnancies')
+    Glucose	       = st.text_input('Glucose level')
     BloodPressure	 = st.text_input('BP level')
     SkinThickness	 = st.text_input('SkinThickness value')
-    Insulin	= st.text_input('Insulin level')
-    BMI	= st.text_input('BMI')
+    Insulin       	= st.text_input('Insulin level')
+    BMI	           = st.text_input('BMI')
     DiabetesPedigreeFunction	= st.text_input('DiabetesPedigreeFunction value')
     Age = st.text_input('Age')
 
@@ -38,5 +38,5 @@ def main():
   
     st.success(diagnosis)
 
-    if __name__= '__main__':
+    if __name__ == '__main__':
       main()
