@@ -7,12 +7,13 @@ import pickle as pkl
 
 
 # load the GlycoSense Model
-Glyco_classifier_model = pkl.load(open('GlycoSense_model.pkl', 'rb'))
+with open('GlycoSense_model.pkl', 'rb') as f:
+    Glycosense_model = pkl.load(f))
 
 def glyco_predict(inputs):
   
   # changing the input_data to numpy array
-  inputs_arr = np.asarray(inputs).reshape(1,-1)
+  inputs_arr = np.asarray(inputs,dtype=float).reshape(1,-1)
 
   prediction = Glyco_classifier_model.predict(inputs_arr)
   print(prediction)
