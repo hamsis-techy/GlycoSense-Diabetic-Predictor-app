@@ -1,25 +1,17 @@
-import streamlit as st
 import numpy as np
-import pandas as pd
-from sklearn.model_selection import train_test_split
-from sklearn.svm import SVC
-from sklearn.metrics import accuracy_score
 import pickle as pkl
+import streamlit as st
 
-
- 
 
 # load the GlycoSense Model
-Glycosense_model = None
-with open('GlycoSense_model.pkl','rb') as f:
-				pkl.load(f)
+Glyco_classifier_model = pkl.load(open('GlycoSense_model.pkl', 'rb'))
 
 def glyco_predict(inputs):
   
   # changing the input_data to numpy array
   inputs_arr = np.asarray(inputs).reshape(1,-1)
 
-  prediction = Glycosense_model.predict(inputs_arr)
+  prediction = Glyco_classifier_model.predict(inputs_arr)
   print(prediction)
 
   if (prediction[0] == 0):
@@ -41,9 +33,9 @@ def main():
 
     diagnosis = ''
     if st.button('Diabetic Test Result'):
-      diagonsis = glyco_predict([Pregnancies,Glucose,BloodPressure,SkinThickness,Insulin,BMI,DiabetesPedigreeFunction,Age])
+      diagnosis = glyco_predict([Pregnancies,Glucose,BloodPressure,SkinThickness,Insulin,BMI,DiabetesPedigreeFunction,Age])
   
     st.success(diagnosis)
-
-    if __name__ == '__main__':
-      main()
+	
+if __name__ == '__main__':
+	main()
