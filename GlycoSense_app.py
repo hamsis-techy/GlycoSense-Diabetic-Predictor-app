@@ -1,6 +1,9 @@
 import numpy as np
+import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn.svm import SVC
+from sklearn.metrics import accuracy_score
 import pickle as pkl
-import streamlit as st
 
 
 # load the GlycoSense Model
