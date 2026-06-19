@@ -8,7 +8,7 @@ import pickle as pkl
 
 # load the GlycoSense Model
 with open('GlycoSense_model.pkl', 'rb') as f:
-    Glycosense_model = pkl.load(f))
+    Glycosense_model = pkl.load(f)
 
 def glyco_predict(inputs):
   
