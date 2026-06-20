@@ -24,8 +24,9 @@ def main():
 	st.header('GlycoSense - Diabeties Predictor')
 	df = pd.read_csv('diabetes.csv')
 	st.dataframe(df.head())
+	
 	Pregnancies     = st.text_input('Number of Pregnancies')
-    Glucose	        = st.text_input('Glucose level')
+	Glucose	        = st.text_input('Glucose level')
     BloodPressure	= st.text_input('BP level')
     SkinThickness	= st.text_input('SkinThickness value')
     Insulin       	= st.text_input('Insulin level')
