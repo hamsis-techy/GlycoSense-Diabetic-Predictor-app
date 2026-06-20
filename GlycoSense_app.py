@@ -21,19 +21,18 @@ def glyco_predict(inputs):
     return('The person is diabetic')
 	  
 def main():
-	st.header('GlycoSense - Diabeties Predictor')
-	df = pd.read_csv('diabetes.csv')
-	st.dataframe(df.head())
-	
-	Pregnancies     = st.text_input('Number of Pregnancies')
-	Glucose	        = st.text_input('Glucose level')
-    BloodPressure	= st.text_input('BP level')
-    SkinThickness	= st.text_input('SkinThickness value')
+    st.header('GlycoSense - Diabeties Predictor')
+    df = pd.read_csv('diabetes.csv')
+    st.dataframe(df.head())
+    Pregnancies     = st.text_input('Number of Pregnancies')
+    Glucose	        = st.text_input('Glucose level')
+    BloodPressure	  = st.text_input('BP level')
+    SkinThickness	  = st.text_input('SkinThickness value')
     Insulin       	= st.text_input('Insulin level')
     BMI	            = st.text_input('BMI')
     DiabetesPedigreeFunction	= st.text_input('DiabetesPedigreeFunction value')
     Age = st.text_input('Age')
-
+ 
     diagnosis = ''
     if st.button('Diabetic Test Result'):
       diagnosis = glyco_predict([Pregnancies,Glucose,BloodPressure,SkinThickness,Insulin,BMI,DiabetesPedigreeFunction,Age])
